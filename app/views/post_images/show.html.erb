@@ -17,7 +17,7 @@
                  <%= @post_image.user.name %></a>
               </li>
               <li>
-                <i class="fa fa-calendar"></i><%= @post_image.created_at.strftime('%Y/%m/%d') %>
+                <i class="fa fa-calendar"><%= @post_image.created_at.strftime('%Y/%m/%d') %></i>
               </li>
               <li>
                 <i class="fa fa-heart"></i>
@@ -61,7 +61,7 @@
               <% end %>
             </ol>
           </div>
-          <hr>
+          <!-- <hr> -->
 
           <!-- Add comment section -->
           <div class="section-title-wrapper style-1 v1 mt-30" id="divAddComment">
@@ -70,15 +70,15 @@
             </h3>
           </div>
           <!-- <form class="mt-20"> -->
-            <%= form_for[@post_image, @post_comment] do |f| %>
+          <%= form_for [@post_image, @post_comment] do |f| %>
             <div class="row">
               <div class="col-sm-12">
-                <%= f.text_area :comments, rows='5', class: "form-control",placeholder: "コメントをここに" %>
+                <%= f.text_area :comment, rows:'5', class: "form-control",placeholder: "コメントをここに" %>
               </div>
             </div>
             <%= f.submit "送信する", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
+          <% end %>
           <!-- </form> -->
-
         </div>
       </div>
     </div>
